@@ -1,9 +1,17 @@
 #!/usr/bin/env python2.7
 
 import os
-from flask import Flask
+from flask import Flask,render_template,abort,redirect,url_for
 
 app=Flask(__name__)
+
+@app.errorhandler(404)
+def err404(err):
+    return redirect(url_for('index'))
+
+@app.route('/')
+def index():
+    return render_template('index.html')
 
 if __name__=='__main__':
     app.debug=True
