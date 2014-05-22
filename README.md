@@ -31,7 +31,7 @@ The table `entries` stores your diary entries.
 
 ## Technical Details
 
-Diary is written in _python2.7_ and is using _flask_ and _mysqlalchemy_!
+Diary is written in _python2.7_ and is using _flask_ and _sqlalchemy_!
 
 # Contribution
 
