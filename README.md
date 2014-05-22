@@ -52,5 +52,7 @@ Just send a pull request!
 
 This program uses the **WTFPL** (Do What The Fuck You Want To Public License)!
 
+See the `LICENSE` file!
+
 
 I would appreciate it, if you would leave my name somewhere in the HTML-templates.
