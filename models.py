@@ -1,6 +1,6 @@
 #!/usr/bin/env python2.7
 
-import datetime
+import datetime,bcrypt
 
 from sqlalchemy import Column,Integer,String,Date
 from database import Base
@@ -13,7 +13,10 @@ class User(Base):
     
     def __init__(self,username,password):
         self.username=username
-        self.password=password
+        self.password=bcrypt.hashpw(password.encode(),bcrypt.gensalt().encode())
+
+    def checkpass(self,password):
+        return self.password==bcrypt.hashpw(password.encode(),self.password.encode())
 
 class Diary(Base):
     __tablename__='diaries'
