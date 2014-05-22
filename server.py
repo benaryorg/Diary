@@ -1,7 +1,7 @@
 #!/usr/bin/env python2.7
 
 import os
-from flask import Flask,render_template,abort,redirect,url_for
+from flask import Flask,render_template,abort,redirect,url_for,request
 from database import db_session as db
 
 app=Flask(__name__)
@@ -13,6 +13,10 @@ def err404(err):
 @app.route('/')
 def index():
     return render_template('index.html')
+
+@app.route('/login',methods=['GET','POST','PUT'])
+def login():
+    return 'login'
 
 if __name__=='__main__':
     app.debug=True
