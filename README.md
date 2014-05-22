@@ -32,7 +32,6 @@ There you have a table `users` with all your users and passwords (hashed).
 The table `diaries` is to store your different diaries,
 for example you could have one diary for writing about school,
 one for writing about yourself, one for your boy/girlfriend and so on.
-
 Here is also stored, if the diary is public (blog-like), private (for yourself)
 or protected (only chosen poeple have access).
 
