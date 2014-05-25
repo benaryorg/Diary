@@ -69,7 +69,7 @@ def addentry(name=''):
     e=Entry(d.id,request.form['text'])
     db.add(e)
     db.commit()
-    return 'success'
+    return redirect(url_for('diary',name=name))
 
 if __name__=='__main__':
     app.debug=True

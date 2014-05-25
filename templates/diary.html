@@ -8,6 +8,10 @@
 </head>
 <body>
     <p>{{ diary.name }}:</p>
+    <form action="{{ url_for('addentry',name=diary.name) }}" method="POST">
+        <input type="textarea" name="text" autofocus>
+        <button type="submit">Submit</button>
+    </form>
     <div>
     {% for e in entries %}
         <p>
