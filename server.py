@@ -56,7 +56,7 @@ def diary(name=''):
     d=db.query(Diary).filter_by(name=name,owner=session['id']).first()
     if not d:
         abort(404)
-    ents=db.query(Entry).filter_by(diary=d.id).all()
+    ents=db.query(Entry).filter_by(diary=d.id).order_by(Entry.date).all()[::-1]
     return render_template('diary.html',diary=d,entries=ents)
 
 @app.route('/diary/<name>/addentry',methods=['POST'])
