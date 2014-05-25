@@ -7,6 +7,13 @@
     <script src="{{ url_for('static',filename='script.js') }}"></script>
 </head>
 <body>
-    No content yet!
+    <p><a href="{{ url_for('logout') }}">Logout</a></p>
+    <ul>
+        {% for d in diaries %}
+        <li>
+            <a href="{{ url_for('diary',name=d.name) }}">{{ d.name }}</a>
+        </li>
+        {% endfor %}
+    </ul>
 </body>
 </html>

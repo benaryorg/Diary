@@ -38,4 +38,5 @@ class Entry(Base):
     def __init__(self,diary,text):
         self.diary=diary
         self.text=text
-        self.date=datetime.datetime.now().strftime("%Y-%m-%d")
+        #self.date=datetime.datetime.now().strftime("%Y-%m-%d")
+        self.date=datetime.datetime.now()
