@@ -7,6 +7,9 @@
     <script src="{{ url_for('static',filename='script.js') }}"></script>
 </head>
 <body>
+    {% if error != '' %}
+        <div style="border: red 1px solid; color: red;">{{ error }}</div>
+    {% endif %}
     <p>
         <a href="{{ url_for('logout') }}">Logout</a>
         <form method="post" action="{{ url_for('newdiary')}}">
