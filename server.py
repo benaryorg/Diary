@@ -31,7 +31,11 @@ def index():
     if not loggedin():
         return redirect(url_for('login'))
     diaries=db.query(Diary).filter_by(owner=session['id']).all()
-    return render_template('index.html',diaries=diaries)
+    if request.args.get('error') == '1':
+        error='you already used that name'
+    else:
+        error=''
+    return render_template('index.html',diaries=diaries, error=error)
 
 @app.route('/login',methods=['GET','POST'])
 def login():
@@ -48,6 +52,19 @@ def login():
 def logout():
     setuser('','')
     return redirect(url_for('index'))
+
+@app.route('/newdiary',methods=['POST'])
+def newdiary():
+    if not loggedin():
+        abort(403)
+    d=db.query(Diary).filter_by(name=request.form['name'], owner=session['id']).first()
+    if d:
+        return redirect(url_for('index', error=1))
+    nd=Diary(session['id'], request.form['name'])
+    db.add(nd)
+    db.commit()
+    return redirect(url_for('diary', name=request.form['name']))
+
 
 @app.route('/diary/<name>')
 def diary(name=''):
