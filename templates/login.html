@@ -1,14 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>Diary – Login</title>
+	<meta charset="UTF-8">
+	<title>Diary – Login</title>
+	<link rel="stylesheet" href="{{ url_for('static',filename='style.css') }}"/>
+	<script src="{{ url_for('static',filename='script.js') }}"></script>
 </head>
 <body>
-    <form method="POST">
-        <input type="text" name="user" placeholder="Username"/><br/>
-        <input type="password" name="pass" placeholder="Password"/><br/>
-        <button type="submit">Login</button>
-    </form>
+	<div class="dot centered">
+		<div id="mainContainer">
+			<div id="header">
+				<h1>Diary</h1>
+				<div id="logout">
+					<a href="{{ url_for('logout') }}">Logout</a>
+				</div>
+			</div>
+			<div id="contentContainer">
+				<form method="POST">
+					<input type="text" name="user" placeholder="Username"/><br/>
+					<input type="password" name="pass" placeholder="Password"/><br/>
+					<input type="submit" value="Login">
+				</form>
+			</div>
+		<div>
+	<div>
 </body>
 </html>
