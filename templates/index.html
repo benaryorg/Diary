@@ -1,27 +1,38 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>Diary</title>
-    <link rel="stylesheet" href="{{ url_for('static',filename='style.css') }}"/>
-    <script src="{{ url_for('static',filename='script.js') }}"></script>
+	<meta charset="UTF-8">
+	<title>Diary</title>
+	<link rel="stylesheet" href="{{ url_for('static',filename='style.css') }}"/>
+	<script src="{{ url_for('static',filename='script.js') }}"></script>
 </head>
 <body>
-    {% if error != '' %}
-        <div style="border: red 1px solid; color: red;">{{ error }}</div>
-    {% endif %}
-    <p>
-        <a href="{{ url_for('logout') }}">Logout</a>
-        <form method="post" action="{{ url_for('newdiary')}}">
-            New diary: <input type="text" name="name" placeholder="name of diary"><input type="submit">
-        </form>
-    </p>
-    <ul>
-        {% for d in diaries %}
-        <li>
-            <a href="{{ url_for('diary',name=d.name) }}">{{ d.name }}</a>
-        </li>
-        {% endfor %}
-    </ul>
+	<div class="dot centered">
+		<div id="mainContainer">
+			<div id="header">
+				<h1>Diarys</h1>
+				<div id="logout">
+					<a href="{{ url_for('logout') }}">Logout</a>
+				</div>
+			</div>
+			<div id="contentContainer">
+				{% if error != '' %}
+					<div class="error">{{ error }}</div>
+				{% endif %}
+				<div id="listing">
+					{% for d in diaries %}
+						<a href="{{ url_for('diary',name=d.name) }}">
+							<div class="link">
+								{{ d.name }}
+							</div>
+						</a>
+					{% endfor %}
+				</div>
+				<form method="post" action="{{ url_for('newdiary')}}">
+					You can add a new diary, if you want: <input type="text" name="name" placeholder="name of diary"><input type="submit">
+				</form>
+			</div>
+		<div>
+	<div>
 </body>
 </html>
