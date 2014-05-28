@@ -13,6 +13,7 @@
 				<h1>Diarys</h1>
 				<div id="logout">
 					<a href="{{ url_for('logout') }}">Logout</a>
+					<a href="{{ url_for('index') }}">Diary-List</a>
 				</div>
 			</div>
 			<div id="contentContainer">

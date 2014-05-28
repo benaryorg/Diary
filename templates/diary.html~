@@ -12,7 +12,7 @@
 			<div id="header">
 				<h1>Diary {{ diary.name }}</h1>
 				<div id="logout">
-					<a href="{{ url_for('logout') }}">Logout</a><br />
+					<a href="{{ url_for('logout') }}">Logout</a>
 					<a href="{{ url_for('index') }}">Diary-List</a>
 				</div>
 			</div>
