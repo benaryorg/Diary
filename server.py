@@ -49,6 +49,16 @@ def logout():
     setuser('','')
     return redirect(url_for('index'))
 
+@app.route('/diary/?new',methods=['POST'])
+def newdiary():
+    if not loggedin():
+        abort(403)
+    d=Diary(session['id'], request.form['name'])
+    db.add(d)
+    db.commit()
+    return redirect(url_for('diary', name=request.form['name']))
+
+
 @app.route('/diary/<name>')
 def diary(name=''):
     if not loggedin():
