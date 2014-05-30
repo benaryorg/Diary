@@ -19,7 +19,7 @@
 			<div id="contentContainer">
 				<form action="{{ url_for('addentry',name=diary.name) }}" method="POST">
 					Add new entry:<br />
-					<textarea name="text" style="width:99%;height:150px;" required></textarea><br/>
+					<textarea name="text" style="width:99%;height:150px;" required autofocus></textarea><br/>
 					<input type="submit">
 				</form>
 				<div id="listing">
