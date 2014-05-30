@@ -29,7 +29,7 @@
 					{% endfor %}
 				</div>
 				<form method="post" action="{{ url_for('newdiary')}}">
-					You can add a new diary, if you want: <input type="text" name="name" placeholder="name of diary"><input type="submit">
+					You can add a new diary, if you want: <input type="text" name="name" placeholder="name of diary" required><input type="submit">
 				</form>
 			</div>
 		<div>
