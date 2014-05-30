@@ -6,7 +6,8 @@ It is a web-application, to store your personal diary in an easy way!
 
 ## Development
 
-I currently do not have much time to develop this program, but I would like to use it by myself, so I will put most of my time in it.
+I currently do not have much time to develop this program, but I would
+like to use it by myself, so I will put most of my time in it.
 
 
 Please report bugs or tell me what features you would like to see soon.
@@ -21,7 +22,10 @@ The stable version, where **all** bugfixes directly go to.
 
 ### testing
 
-The branch I will use for developing (because I have more than just one computer).
+The branch used for development. It will be mostly stable, but there will be
+some things like a logout button on the login page.
+
+You should use this one, if you want functionality! Use it with `git checkout testing`!
 
 ## Concept
 
@@ -39,7 +43,7 @@ The table `entries` stores your diary entries.
 
 ## Technical Details
 
-Diary is written in _python2.7_ and is using _flask_ and _sqlalchemy_!
+Diary is written in _python2.7_ and is using _flask_, _bcrypt_ and _sqlalchemy_!
 
 # Contribution
 
